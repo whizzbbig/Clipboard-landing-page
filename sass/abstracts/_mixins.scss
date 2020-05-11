@@ -1,0 +1,27 @@
+@mixin flexible {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* MEDIA QUERIES
+
+tablet == 376px - 1000px 
+desktop == 1000px - --
+
+
+1em = 16px
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == tablet {
+    @media only screen and (min-width: 23.5625em) {
+      @content;
+    } //377px
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 62.5em) {
+      @content;
+    } //1000px
+  }
+}

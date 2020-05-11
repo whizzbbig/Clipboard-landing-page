@@ -1,0 +1,101 @@
+.footer {
+  padding: 3em 0;
+  text-align: center;
+  background: $light-gray;
+
+  @include respond(desktop) {
+    padding: 2em 0;
+  }
+
+  &__logo {
+    width: 2em;
+    height: 2em;
+  }
+
+  &__list {
+    @include respond(desktop) {
+      width: 100%;
+      display: flex;
+    }
+  }
+
+  &__item {
+    margin-bottom: 1.5em;
+
+    @include respond(desktop) {
+      margin-bottom: 0;
+      padding: 0.5em 2.5em;
+    }
+
+    .last {
+      @include respond(desktop) {
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    color: $dark-grayish-blue;
+    position: relative;
+    z-index: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      right: 0%;
+      height: 2px;
+      width: 0%;
+      background: $medium-black-color;
+      z-index: -1;
+      transition: width 0.3s ease-in;
+    }
+
+    &:hover::before {
+      width: 100%;
+      transition: width 0.2s ease-in;
+    }
+  }
+
+  &__primary {
+    margin-top: 2.5em;
+
+    @include respond(desktop) {
+      margin-top: 0;
+      display: flex;
+      flex-direction: column;
+      max-width: 80%;
+      margin-left: -5em;
+    }
+
+    &--base {
+      @include respond(desktop) {
+        display: flex;
+
+        .footer__item {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  &__secondary {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .socials {
+      padding-left: 1em;
+    }
+
+    .uil {
+      font-size: 3.5rem;
+      color: $medium-black-color;
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: $icon-color;
+      }
+    }
+  }
+}

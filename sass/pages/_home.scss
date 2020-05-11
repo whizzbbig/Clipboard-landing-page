@@ -1,0 +1,87 @@
+.section {
+  &-two {
+    .col {
+      margin-top: 1.5em;
+    }
+
+    &__parag {
+      margin-bottom: 3.5em;
+
+      @include respond(desktop) {
+        max-width: 39%;
+        margin: 0 auto 3.5em auto;
+      }
+    }
+
+    &__left {
+      @include respond(desktop) {
+        margin-left: -2em;
+        margin-right: 5em;
+      }
+    }
+
+    .col {
+      @include respond(desktop) {
+        margin: 0;
+        text-align: left;
+
+        p {
+          max-width: 60%;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+
+  &-three {
+    .uil {
+      color: $icon-color;
+      font-size: 6rem;
+      text-align: center;
+    }
+
+    .row {
+      @include respond(desktop) {
+        display: block;
+      }
+    }
+
+    .col {
+      width: 93%;
+
+      &:not(:last-child) {
+        margin-right: 6%;
+      }
+
+      &__heading {
+        margin-top: 2.5em;
+
+        @include respond(desktop) {
+          margin-top: 1.5em;
+        }
+      }
+
+      &__paragraph {
+        max-width: 97%;
+        margin: 0 auto;
+      }
+
+      &-box {
+        @include respond(desktop) {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  &-four {
+    padding: 8em 0;
+
+    .col:not(:last-child) {
+      margin-bottom: 5.5em;
+    }
+  }
+}

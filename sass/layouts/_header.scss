@@ -1,0 +1,33 @@
+header {
+  padding: 8em 0;
+  text-align: center;
+  background: url("../images/bg-header-mobile.png") no-repeat;
+
+  @include respond(desktop) {
+    background: url("../images/bg-header-desktop.png") no-repeat;
+    background-size: cover;
+  }
+
+  @include respond(tablet) {
+    background: url("../images/bg-header-desktop.png") no-repeat;
+    background-size: cover;
+  }
+
+  .logo {
+    width: 6.5em;
+    height: 6.5em;
+
+    &-box {
+      margin-bottom: 5em;
+    }
+  }
+
+  p {
+    margin-bottom: 2.5em;
+
+    @include respond(desktop) {
+      max-width: 45%;
+      margin: 0 auto 2.5em auto;
+    }
+  }
+}
